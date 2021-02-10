@@ -3,7 +3,7 @@ let self = {
   browser: null,
   page: null,
   initialize: async () => {
-    self.browser = await puppeteer.launch({ headless: false });
+    self.browser = await puppeteer.launch({ args: ["--no-sandbox"] });
     self.page = await self.browser.newPage();
   },
   login: async (username, password) => {
